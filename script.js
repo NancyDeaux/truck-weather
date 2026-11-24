@@ -1,4 +1,4 @@
-const url = "https://api.open-meteo.com/v1/forecast?latitude=29.95465&longitude=-90.07507&current=temperature_2m,wind_speed_10m&temperature_unit=fahrenheit";
+const url = "https://api.open-meteo.com/v1/forecast?latitude=29.95465&longitude=-90.07507&current_weather=true&temperature_unit=fahrenheit";
 const button = document.getElementById("check-btn");
 const weatherArea = document.getElementById("weather");
 
@@ -26,6 +26,12 @@ async function getWeather() {
     precipitation.className = "fs-4";
     precipitation.textContent = "Precipitation: " + data.current.precipitation + " " + data.current_units.precipitation;
     weatherArea.appendChild(precipitation);
+
+    //Is Day
+    const isDay = document.createElement("p");
+    isDay.className = "fs-4";
+    isDay.textContent = "It is currently: " + (data.current_weather.is_day ? "Daytime" : "Nighttime");
+    weatherArea.appendChild(isDay);
 }
 
 button.addEventListener("click", getWeather);
