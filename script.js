@@ -1,4 +1,4 @@
-const url = "https://api.open-meteo.com/v1/forecast?latitude=29.95465&longitude=-90.07507&current=temperature_2m,wind_speed_10m,precipitation,is_day&temperature_unit=fahrenheit&wind_speed_unit=mph";
+const url = "https://api.open-meteo.com/v1/forecast?latitude=29.95465&longitude=-90.07507&current_weather=true&temperature_unit=fahrenheit&wind_speed_unit=mph";
 const button = document.getElementById("check-btn");
 const weatherArea = document.getElementById("weather");
 
